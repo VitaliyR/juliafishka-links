@@ -66,7 +66,7 @@
 				<button
 					type="button"
 					class={[
-						'flex w-12 items-center justify-center hover:opacity-50 cursor-pointer',
+						'flex w-12 cursor-pointer items-center justify-center hover:opacity-50',
 						{
 							'h-full': !link.image,
 							'z-10 h-[60px] place-self-end text-white': link.image
@@ -74,15 +74,19 @@
 					]}
 					onclick={(e) => {
 						e.preventDefault();
-						navigator?.share({
-							url: link.url
-						}).catch(() => {});
+						navigator
+							?.share({
+								url: link.url
+							})
+							.catch(() => {});
 					}}
 				>
 					<div class="h-5 w-5">
 						{@html DotsIcon}
 					</div>
 				</button>
+			{:else}
+				<div class="w-[40px]"></div>
 			{/if}
 		</a>
 	{/each}
