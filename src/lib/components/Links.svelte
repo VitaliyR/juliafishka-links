@@ -47,7 +47,7 @@
 		>
 			{#if link.icon && !link.image}
 				{@const url = getAssetUrl(link.icon, { width: 50 })}
-				<img src={url} class="w-[50px] rounded-full object-contain" alt="Logo of the link" />
+				<img src={url} class="w-[50px] h-[50px] rounded-full object-contain" alt="Logo of the link" />
 			{:else if !link.image}
 				<div class="w-[50px]"></div>
 			{/if}
